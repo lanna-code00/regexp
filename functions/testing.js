@@ -26,6 +26,20 @@ document.querySelector('#emailerbutton').addEventListener('click', () => {
   }
 })
 
+document.querySelector('#phonebutton').addEventListener('click', () => {
+  let phone = document.getElementById('phonenumber').value;
+  if(newsearch.phonevalidation(phone, 11) === true) {
+    console.log("validated");
+  }
+  else {
+    console.log("not validated")
+  }
+})
+
+let mystring = "9047676906.99";
+let regexp = /[,\-.*]/.test(mystring);
+// console.log(regexp)
+
 
 const loadUsers = async () => {
   try {

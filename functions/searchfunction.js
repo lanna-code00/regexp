@@ -31,11 +31,20 @@ export class Searchfunction{
             }
     }
 
-
-    
+    phonevalidation = (phoneno, maxNumber) => {
+        let mynumber = phoneno.split("-.").join("");
+        let regexphone = /^\(?(\d{4})\)?(\d{3})?(\d{4})$/;
+        if(mynumber.length === maxNumber){
+           return phoneno.match(regexphone)[0];
+        }   
+        else 
+         {
+            return false;
+        }      
 
 }
 
 
 
 
+}
