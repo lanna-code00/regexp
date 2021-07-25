@@ -20,12 +20,19 @@ export class Searchfunction{
             return val;
     };
 
-
     // for e-mail validation
-    emailValidation = () => {
-        
+
+    emailValidation = (email) => {
+        let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3,3})+$/i;
+            if (email.match(regexEmail)) {
+                return true; 
+            } else {
+                return false; 
+            }
     }
 
+
+    
 
 }
 

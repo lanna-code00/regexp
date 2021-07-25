@@ -4,16 +4,28 @@ const newsearch = new Searchfunction();
 let jsonusers = [];
 
 let searchthrougharray = () => {
-  
+  let search = document.getElementById("searcher").value;
+
   fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => response.json())
   .then(json => {
     json.map((el) =>{
-      displayUsers(newsearch.arraySearcher(document.getElementById("searcher").value, json));
+      displayUsers(newsearch.arraySearcher(search, json));
     })
   })
 
 };
+
+document.querySelector('#emailerbutton').addEventListener('click', () => {
+  let mailer = document.getElementById('emailer').value;
+  if(newsearch.emailValidation(mailer) === true) {
+    console.log("validated");
+  }
+  else {
+    console.log("not validated")
+  }
+})
+
 
 const loadUsers = async () => {
   try {
